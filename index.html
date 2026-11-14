@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<title>The World That Would Not Die</title><link rel="stylesheet" href="css/style.css"></head>
+<body>
+<canvas id="cv"></canvas>
+<div id="hud" class="hid"><div id="hl"><div class="bar"><i id="hp"></i><b id="hpt"></b></div><div class="bar sm"><i id="dg"></i></div><div id="sub"></div></div><div id="hr"></div><div id="bar"></div><div id="toast"></div></div>
+<div id="touch" class="hid"><div id="stick"><i id="knob"></i></div><button id="bA">ATK</button><button id="bD">DODGE</button><button id="bP">II</button><button id="bS">ST</button></div>
+<section id="platform" class="scr fade"><h1>The World That Would Not Die</h1><p>Select your device. Pick the one you are actually using: the typing challenge needs a real keyboard.</p>
+<div class="devs"><div class="grp"><h2>MOBILE</h2><button class="dev" data-d="mobile"><span class="ph"></span><span class="tb"></span></button></div>
+<div class="grp"><h2>COMPUTER</h2><button class="dev" data-d="computer"><span class="pc"></span></button></div></div></section>
+<section id="menu" class="scr hid"><h1>The World That Would Not Die</h1><p id="best"></p><button id="play">New Run</button><button id="mSet">Settings</button></section>
+<section id="settings" class="scr hid"><h2>Settings</h2><div id="fields"></div><div class="row"><button id="saveBtn" disabled>Save Changes</button><button id="sBack">Back</button></div></section>
+<section id="pause" class="scr hid"><h2>Paused</h2><button id="pRes">Resume</button><button id="pSt">Stats</button><button id="pSet">Settings</button><button id="pAdm">Admin Panel</button><button id="pAb">Abandon Run</button></section>
+<section id="stats" class="scr hid"><h2>Stats</h2><div id="sp"></div><div id="srows"></div><div class="row"><button id="sReset">Stat Reset (once per run)</button><button id="sBack2">Close</button></div></section>
+<section id="admin" class="scr hid"><h2>Admin Panel</h2><div id="adm"></div><button id="aClose">Close</button></section>
+<section id="death" class="scr hid"><h2 id="dT">You died</h2><p id="dS"></p><button id="dNew">New Run</button><button id="dMenu">Main Menu</button></section>
+<script type="module" src="js/main.js"></script></body></html>
