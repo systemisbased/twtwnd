@@ -1,0 +1,822 @@
+{
+ "source": "assets/source/sprite_sheet.png",
+ "sheetSize": [
+  1536,
+  1024
+ ],
+ "note": "Anchors are per-frame (x,y) in the frame's own pixel space; tweak freely, no re-extract needed unless sprites change. Player anchor = bottom-center (feet).",
+ "player": {
+  "idle": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    {
+     "file": "assets/sprites/player/idle_0.png",
+     "w": 50,
+     "h": 87,
+     "anchor": {
+      "x": 25,
+      "y": 87
+     },
+     "src": {
+      "x": 88,
+      "y": 65,
+      "w": 50,
+      "h": 87
+     }
+    },
+    {
+     "file": "assets/sprites/player/idle_1.png",
+     "w": 50,
+     "h": 87,
+     "anchor": {
+      "x": 25,
+      "y": 87
+     },
+     "src": {
+      "x": 161,
+      "y": 65,
+      "w": 50,
+      "h": 87
+     }
+    },
+    {
+     "file": "assets/sprites/player/idle_2.png",
+     "w": 53,
+     "h": 89,
+     "anchor": {
+      "x": 26,
+      "y": 89
+     },
+     "src": {
+      "x": 234,
+      "y": 63,
+      "w": 53,
+      "h": 89
+     }
+    },
+    {
+     "file": "assets/sprites/player/idle_3.png",
+     "w": 54,
+     "h": 89,
+     "anchor": {
+      "x": 27,
+      "y": 89
+     },
+     "src": {
+      "x": 318,
+      "y": 63,
+      "w": 54,
+      "h": 89
+     }
+    }
+   ]
+  },
+  "walk": {
+   "fps": 8,
+   "loop": true,
+   "frames": [
+    {
+     "file": "assets/sprites/player/walk_0.png",
+     "w": 51,
+     "h": 84,
+     "anchor": {
+      "x": 25,
+      "y": 84
+     },
+     "src": {
+      "x": 81,
+      "y": 178,
+      "w": 51,
+      "h": 84
+     }
+    },
+    {
+     "file": "assets/sprites/player/walk_1.png",
+     "w": 50,
+     "h": 80,
+     "anchor": {
+      "x": 25,
+      "y": 80
+     },
+     "src": {
+      "x": 156,
+      "y": 182,
+      "w": 50,
+      "h": 80
+     }
+    },
+    {
+     "file": "assets/sprites/player/walk_2.png",
+     "w": 50,
+     "h": 83,
+     "anchor": {
+      "x": 25,
+      "y": 83
+     },
+     "src": {
+      "x": 228,
+      "y": 179,
+      "w": 50,
+      "h": 83
+     }
+    },
+    {
+     "file": "assets/sprites/player/walk_3.png",
+     "w": 51,
+     "h": 82,
+     "anchor": {
+      "x": 25,
+      "y": 82
+     },
+     "src": {
+      "x": 298,
+      "y": 178,
+      "w": 51,
+      "h": 82
+     }
+    },
+    {
+     "file": "assets/sprites/player/walk_4.png",
+     "w": 51,
+     "h": 82,
+     "anchor": {
+      "x": 25,
+      "y": 82
+     },
+     "src": {
+      "x": 361,
+      "y": 178,
+      "w": 51,
+      "h": 82
+     }
+    }
+   ]
+  },
+  "run": {
+   "fps": 12,
+   "loop": true,
+   "frames": [
+    {
+     "file": "assets/sprites/player/run_0.png",
+     "w": 54,
+     "h": 86,
+     "anchor": {
+      "x": 27,
+      "y": 86
+     },
+     "src": {
+      "x": 80,
+      "y": 295,
+      "w": 54,
+      "h": 86
+     }
+    },
+    {
+     "file": "assets/sprites/player/run_1.png",
+     "w": 56,
+     "h": 84,
+     "anchor": {
+      "x": 28,
+      "y": 84
+     },
+     "src": {
+      "x": 154,
+      "y": 295,
+      "w": 56,
+      "h": 84
+     }
+    },
+    {
+     "file": "assets/sprites/player/run_2.png",
+     "w": 58,
+     "h": 81,
+     "anchor": {
+      "x": 29,
+      "y": 81
+     },
+     "src": {
+      "x": 227,
+      "y": 297,
+      "w": 58,
+      "h": 81
+     }
+    },
+    {
+     "file": "assets/sprites/player/run_3.png",
+     "w": 54,
+     "h": 91,
+     "anchor": {
+      "x": 27,
+      "y": 91
+     },
+     "src": {
+      "x": 303,
+      "y": 288,
+      "w": 54,
+      "h": 91
+     }
+    },
+    {
+     "file": "assets/sprites/player/run_4.png",
+     "w": 58,
+     "h": 84,
+     "anchor": {
+      "x": 29,
+      "y": 84
+     },
+     "src": {
+      "x": 371,
+      "y": 289,
+      "w": 58,
+      "h": 84
+     }
+    }
+   ]
+  },
+  "jump": {
+   "fps": 8,
+   "loop": false,
+   "frames": [
+    {
+     "file": "assets/sprites/player/jump_0.png",
+     "w": 53,
+     "h": 96,
+     "anchor": {
+      "x": 26,
+      "y": 96
+     },
+     "src": {
+      "x": 85,
+      "y": 400,
+      "w": 53,
+      "h": 96
+     }
+    },
+    {
+     "file": "assets/sprites/player/jump_1.png",
+     "w": 52,
+     "h": 83,
+     "anchor": {
+      "x": 26,
+      "y": 83
+     },
+     "src": {
+      "x": 154,
+      "y": 417,
+      "w": 52,
+      "h": 83
+     }
+    },
+    {
+     "file": "assets/sprites/player/jump_2.png",
+     "w": 52,
+     "h": 84,
+     "anchor": {
+      "x": 26,
+      "y": 84
+     },
+     "src": {
+      "x": 230,
+      "y": 408,
+      "w": 52,
+      "h": 84
+     }
+    },
+    {
+     "file": "assets/sprites/player/jump_3.png",
+     "w": 58,
+     "h": 91,
+     "anchor": {
+      "x": 29,
+      "y": 91
+     },
+     "src": {
+      "x": 303,
+      "y": 406,
+      "w": 58,
+      "h": 91
+     }
+    }
+   ]
+  },
+  "fall": {
+   "fps": 8,
+   "loop": true,
+   "frames": [
+    {
+     "file": "assets/sprites/player/fall_0.png",
+     "w": 51,
+     "h": 75,
+     "anchor": {
+      "x": 25,
+      "y": 75
+     },
+     "src": {
+      "x": 84,
+      "y": 524,
+      "w": 51,
+      "h": 75
+     }
+    },
+    {
+     "file": "assets/sprites/player/fall_1.png",
+     "w": 48,
+     "h": 69,
+     "anchor": {
+      "x": 24,
+      "y": 69
+     },
+     "src": {
+      "x": 154,
+      "y": 531,
+      "w": 48,
+      "h": 69
+     }
+    },
+    {
+     "file": "assets/sprites/player/fall_2.png",
+     "w": 52,
+     "h": 61,
+     "anchor": {
+      "x": 26,
+      "y": 61
+     },
+     "src": {
+      "x": 229,
+      "y": 537,
+      "w": 52,
+      "h": 61
+     }
+    },
+    {
+     "file": "assets/sprites/player/fall_3.png",
+     "w": 56,
+     "h": 66,
+     "anchor": {
+      "x": 28,
+      "y": 66
+     },
+     "src": {
+      "x": 303,
+      "y": 535,
+      "w": 56,
+      "h": 66
+     }
+    }
+   ]
+  },
+  "hurt": {
+   "fps": 6,
+   "loop": false,
+   "frames": [
+    {
+     "file": "assets/sprites/player/hurt_0.png",
+     "w": 51,
+     "h": 92,
+     "anchor": {
+      "x": 25,
+      "y": 92
+     },
+     "src": {
+      "x": 81,
+      "y": 628,
+      "w": 51,
+      "h": 92
+     }
+    },
+    {
+     "file": "assets/sprites/player/hurt_1.png",
+     "w": 50,
+     "h": 84,
+     "anchor": {
+      "x": 25,
+      "y": 84
+     },
+     "src": {
+      "x": 155,
+      "y": 636,
+      "w": 50,
+      "h": 84
+     }
+    },
+    {
+     "file": "assets/sprites/player/hurt_2.png",
+     "w": 77,
+     "h": 78,
+     "anchor": {
+      "x": 38,
+      "y": 78
+     },
+     "src": {
+      "x": 248,
+      "y": 641,
+      "w": 77,
+      "h": 78
+     }
+    }
+   ]
+  },
+  "death": {
+   "fps": 6,
+   "loop": false,
+   "frames": [
+    {
+     "file": "assets/sprites/player/death_0.png",
+     "w": 52,
+     "h": 91,
+     "anchor": {
+      "x": 26,
+      "y": 91
+     },
+     "src": {
+      "x": 86,
+      "y": 745,
+      "w": 52,
+      "h": 91
+     }
+    },
+    {
+     "file": "assets/sprites/player/death_1.png",
+     "w": 50,
+     "h": 87,
+     "anchor": {
+      "x": 25,
+      "y": 87
+     },
+     "src": {
+      "x": 159,
+      "y": 748,
+      "w": 50,
+      "h": 87
+     }
+    },
+    {
+     "file": "assets/sprites/player/death_2.png",
+     "w": 52,
+     "h": 76,
+     "anchor": {
+      "x": 26,
+      "y": 76
+     },
+     "src": {
+      "x": 231,
+      "y": 758,
+      "w": 52,
+      "h": 76
+     }
+    },
+    {
+     "file": "assets/sprites/player/death_3.png",
+     "w": 84,
+     "h": 29,
+     "anchor": {
+      "x": 42,
+      "y": 29
+     },
+     "src": {
+      "x": 300,
+      "y": 805,
+      "w": 84,
+      "h": 29
+     }
+    }
+   ]
+  }
+ },
+ "guide": {
+  "portraits": {
+   "normal": {
+    "file": "assets/sprites/guide/portraits/normal.png",
+    "w": 161,
+    "h": 162,
+    "anchor": {
+     "x": 0,
+     "y": 0
+    },
+    "src": {
+     "x": 844,
+     "y": 77,
+     "w": 161,
+     "h": 162
+    }
+   },
+   "smug": {
+    "file": "assets/sprites/guide/portraits/smug.png",
+    "w": 147,
+    "h": 162,
+    "anchor": {
+     "x": 0,
+     "y": 0
+    },
+    "src": {
+     "x": 1020,
+     "y": 76,
+     "w": 147,
+     "h": 162
+    }
+   },
+   "laugh": {
+    "file": "assets/sprites/guide/portraits/laugh.png",
+    "w": 139,
+    "h": 162,
+    "anchor": {
+     "x": 0,
+     "y": 0
+    },
+    "src": {
+     "x": 1189,
+     "y": 76,
+     "w": 139,
+     "h": 162
+    }
+   },
+   "teasing": {
+    "file": "assets/sprites/guide/portraits/teasing.png",
+    "w": 144,
+    "h": 163,
+    "anchor": {
+     "x": 0,
+     "y": 0
+    },
+    "src": {
+     "x": 1353,
+     "y": 76,
+     "w": 144,
+     "h": 163
+    }
+   },
+   "serious": {
+    "file": "assets/sprites/guide/portraits/serious.png",
+    "w": 150,
+    "h": 158,
+    "anchor": {
+     "x": 0,
+     "y": 0
+    },
+    "src": {
+     "x": 847,
+     "y": 271,
+     "w": 150,
+     "h": 158
+    }
+   },
+   "annoyed": {
+    "file": "assets/sprites/guide/portraits/annoyed.png",
+    "w": 151,
+    "h": 158,
+    "anchor": {
+     "x": 0,
+     "y": 0
+    },
+    "src": {
+     "x": 1020,
+     "y": 271,
+     "w": 151,
+     "h": 158
+    }
+   },
+   "surprised": {
+    "file": "assets/sprites/guide/portraits/surprised.png",
+    "w": 149,
+    "h": 159,
+    "anchor": {
+     "x": 0,
+     "y": 0
+    },
+    "src": {
+     "x": 1192,
+     "y": 271,
+     "w": 149,
+     "h": 159
+    }
+   },
+   "bothered": {
+    "file": "assets/sprites/guide/portraits/bothered.png",
+    "w": 134,
+    "h": 159,
+    "anchor": {
+     "x": 0,
+     "y": 0
+    },
+    "src": {
+     "x": 1364,
+     "y": 271,
+     "w": 134,
+     "h": 159
+    }
+   },
+   "sad": {
+    "file": "assets/sprites/guide/portraits/sad.png",
+    "w": 151,
+    "h": 151,
+    "anchor": {
+     "x": 0,
+     "y": 0
+    },
+    "src": {
+     "x": 848,
+     "y": 464,
+     "w": 151,
+     "h": 151
+    }
+   },
+   "blush": {
+    "file": "assets/sprites/guide/portraits/blush.png",
+    "w": 157,
+    "h": 157,
+    "anchor": {
+     "x": 0,
+     "y": 0
+    },
+    "src": {
+     "x": 1021,
+     "y": 464,
+     "w": 157,
+     "h": 157
+    }
+   },
+   "shocked": {
+    "file": "assets/sprites/guide/portraits/shocked.png",
+    "w": 162,
+    "h": 159,
+    "anchor": {
+     "x": 0,
+     "y": 0
+    },
+    "src": {
+     "x": 1192,
+     "y": 464,
+     "w": 162,
+     "h": 159
+    }
+   },
+   "confused": {
+    "file": "assets/sprites/guide/portraits/confused.png",
+    "w": 159,
+    "h": 157,
+    "anchor": {
+     "x": 0,
+     "y": 0
+    },
+    "src": {
+     "x": 1364,
+     "y": 464,
+     "w": 159,
+     "h": 157
+    }
+   }
+  },
+  "fullBody": [
+   {
+    "file": "assets/sprites/guide/body_0.png",
+    "w": 133,
+    "h": 308,
+    "anchor": {
+     "x": 66,
+     "y": 308
+    },
+    "src": {
+     "x": 432,
+     "y": 674,
+     "w": 133,
+     "h": 308
+    }
+   },
+   {
+    "file": "assets/sprites/guide/body_1.png",
+    "w": 181,
+    "h": 306,
+    "anchor": {
+     "x": 90,
+     "y": 306
+    },
+    "src": {
+     "x": 569,
+     "y": 675,
+     "w": 181,
+     "h": 306
+    }
+   },
+   {
+    "file": "assets/sprites/guide/body_2.png",
+    "w": 153,
+    "h": 312,
+    "anchor": {
+     "x": 76,
+     "y": 312
+    },
+    "src": {
+     "x": 745,
+     "y": 673,
+     "w": 153,
+     "h": 312
+    }
+   },
+   {
+    "file": "assets/sprites/guide/body_3.png",
+    "w": 138,
+    "h": 306,
+    "anchor": {
+     "x": 69,
+     "y": 306
+    },
+    "src": {
+     "x": 912,
+     "y": 680,
+     "w": 138,
+     "h": 306
+    }
+   }
+  ],
+  "art": {
+   "file": "assets/sprites/guide/art_large.png",
+   "w": 449,
+   "h": 588,
+   "anchor": {
+    "x": 224,
+    "y": 588
+   },
+   "src": {
+    "x": 393,
+    "y": 48,
+    "w": 449,
+    "h": 588
+   }
+  }
+ },
+ "misc": {
+  "guide_head_peek": {
+   "file": "assets/sprites/misc/guide_head_peek.png",
+   "w": 44,
+   "h": 62,
+   "anchor": {
+    "x": 22,
+    "y": 62
+   },
+   "src": {
+    "x": 76,
+    "y": 898,
+    "w": 44,
+    "h": 62
+   }
+  },
+  "player_back": {
+   "file": "assets/sprites/misc/player_back.png",
+   "w": 53,
+   "h": 74,
+   "anchor": {
+    "x": 26,
+    "y": 74
+   },
+   "src": {
+    "x": 152,
+    "y": 892,
+    "w": 53,
+    "h": 74
+   }
+  },
+  "spikes": {
+   "file": "assets/sprites/misc/spikes.png",
+   "w": 60,
+   "h": 60,
+   "anchor": {
+    "x": 30,
+    "y": 60
+   },
+   "src": {
+    "x": 230,
+    "y": 899,
+    "w": 60,
+    "h": 60
+   }
+  },
+  "portal_ring": {
+   "file": "assets/sprites/misc/portal_ring.png",
+   "w": 62,
+   "h": 69,
+   "anchor": {
+    "x": 31,
+    "y": 69
+   },
+   "src": {
+    "x": 316,
+    "y": 892,
+    "w": 62,
+    "h": 69
+   }
+  }
+ },
+ "ui": {
+  "face_closeup": {
+   "file": "assets/sprites/ui/face_closeup.png",
+   "w": 386,
+   "h": 186
+  },
+  "dialogue_reference": {
+   "file": "assets/sprites/ui/dialogue_reference.png",
+   "w": 428,
+   "h": 136
+  }
+ }
+}

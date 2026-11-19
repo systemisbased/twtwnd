@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Sprite preview - The World That Would Not Die</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root { --bg:#12101c; --panel:#1b1830; --ink:#d9d4f0; --dim:#8d86b0; }
+  @media (prefers-color-scheme: light) { :root { --bg:#eceaf6; --panel:#fff; --ink:#221f38; --dim:#5d5780; } }
+  body { margin:0; padding:16px; background:var(--bg); color:var(--ink); font:14px/1.4 system-ui, sans-serif; }
+  h1 { font-size:16px; margin:0 0 4px } h2 { font-size:13px; margin:18px 0 8px; color:var(--dim); text-transform:uppercase; letter-spacing:.08em }
+  .row { display:flex; flex-wrap:wrap; gap:10px }
+  .cell { background:var(--panel); padding:8px; border-radius:6px; text-align:center }
+  .cell small { display:block; color:var(--dim); margin-top:4px }
+  canvas { image-rendering:pixelated; display:block; margin:auto }
+  #status { color:var(--dim); font-size:12px }
+  #dlg { display:flex; gap:0; width:min(560px,100%); background:#0d0b18; border:2px solid #4a4580; border-radius:4px; cursor:pointer }
+  #dlg canvas { border-right:2px solid #4a4580; flex:none } #dlg p { margin:0; padding:14px; flex:1; color:#e6e2fa }
+  button { background:var(--panel); color:var(--ink); border:1px solid var(--dim); border-radius:4px; padding:4px 10px; cursor:pointer }
+</style></head><body>
+<h1>Extracted sprite preview</h1>
+<div id="status">loading...</div>
+<h2>Player animations (live)</h2><div class="row" id="anims"></div>
+<h2>Guide portraits</h2><div class="row" id="ports"></div>
+<h2>Dialogue box demo (click to cycle expressions)</h2>
+<div id="dlg"><canvas width="176" height="176"></canvas><p id="line"></p></div>
+<h2>Guide art / poses / misc</h2><div class="row" id="misc"></div>
+<script src="../js/CharacterSprites.js"></script>
+<script>
+CharacterSprites.load().then(function (S) {
+  var st = document.getElementById('status');
+  st.textContent = S.missing.length ? 'MISSING: ' + S.missing.join(', ') : 'all assets loaded OK';
+  var cells = [];
+  function cell(parent, label, w, h) {
+    var d = document.createElement('div'); d.className = 'cell';
+    var c = document.createElement('canvas'); c.width = w; c.height = h; d.appendChild(c);
+    var s = document.createElement('small'); s.textContent = label; d.appendChild(s); parent.appendChild(d); return c.getContext('2d');
+  }
+  var animators = Object.keys(S.player).map(function (n) {
+    var a = S.createPlayerAnimator(n), ctx = cell(document.getElementById('anims'), n + ' (' + S.player[n].frames.length + 'f, ' + S.player[n].fps + 'fps' + (S.player[n].loop ? '' : ', one-shot') + ')', 220, 300);
+    return { a: a, ctx: ctx, n: n, wait: 0 };
+  });
+  var last = performance.now();
+  (function tick(now) {
+    var dt = Math.min(0.1, (now - last) / 1000); last = now;
+    animators.forEach(function (o) {
+      o.a.update(dt);
+      if (o.a.done) { o.wait += dt; if (o.wait > 1) { o.a.play(o.n, { restart: true }); o.wait = 0; } }
+      o.ctx.clearRect(0, 0, 220, 300); o.a.draw(o.ctx, 110, 285, 3, false);
+    });
+    requestAnimationFrame(tick);
+  })(last);
+
+  S.expressions().forEach(function (n) { var f = S.portrait(n); var ctx = cell(document.getElementById('ports'), n, 176, 176); S.drawFrame(ctx, f, 0, 0, 1, false); });
+
+  var lines = { normal: 'You are awake. Good. I was getting bored.', smug: "Don't look so surprised. I did say I'd be here.",
+    laugh: 'Oh? You died already? How... disappointing.', teasing: "Try not to die before breakfast, hm?", serious: 'Listen carefully. This part matters.',
+    annoyed: 'Are you even listening?', surprised: 'Oh - you actually got through that.', sad: '...' };
+  var keys = Object.keys(lines), ki = 0, dctx = document.querySelector('#dlg canvas').getContext('2d');
+  function show() { var k = keys[ki % keys.length]; dctx.clearRect(0, 0, 176, 176); S.drawFrame(dctx, S.portrait(k), 0, 0, 1, false); document.getElementById('line').textContent = '[' + k + '] ' + lines[k]; }
+  document.getElementById('dlg').onclick = function () { ki++; show(); }; show();
+
+  var m = document.getElementById('misc');
+  if (S.art) { var c = cell(m, 'art_large', S.art.w, S.art.h); S.drawFrame(c, S.art, S.art.ax, S.art.ay, 1, false); }
+  S.fullBody.forEach(function (f, i) { var c = cell(m, 'body_' + i, f.w, f.h); S.drawFrame(c, f, f.ax, f.ay, 1, false); });
+  Object.keys(S.misc).forEach(function (n) { var f = S.misc[n], c = cell(m, n, f.w, f.h); S.drawFrame(c, f, f.ax, f.ay, 1, false); });
+});
+</script></body></html>
